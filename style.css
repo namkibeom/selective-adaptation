@@ -8,3 +8,16 @@
 .authors { margin: 18px 0 0; color: var(--ink, #233b52); font-size: 15px; letter-spacing: .02em; }
 .authors > span[aria-hidden] { margin: 0 9px; color: var(--muted, #647381); }
 .affiliation { font-variant: small-caps; letter-spacing: .04em; }
+
+/* Empirical plates preserve the manuscript's vector panels at readable widths. */
+.evidence-figure{background:var(--white);padding:24px 22px 19px;border-top:2px solid var(--navy)}
+.figure-scroll{overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-color:#A5B8BE #F1F4F3;scrollbar-width:thin}
+.figure-scroll:focus-visible{outline:2px solid var(--teal);outline-offset:5px}
+.figure-scroll img{width:100%;max-width:none;margin-inline:auto}
+.evidence-figure figcaption{padding-top:15px;margin-top:15px;border-top:1px solid var(--line)}
+.evidence-figure figcaption strong{color:var(--ink);font-weight:600}
+.evidence-figure figcaption a{display:inline-block;white-space:nowrap;margin-left:4px;color:var(--teal)}
+.atlas-figure{margin-top:27px}
+.attention-section{border-top:1px solid var(--line)}
+@media(max-width:950px){.evidence-figure{padding:20px 16px 17px}.figure-scroll img{min-width:860px}}
+@media(max-width:700px){.evidence-figure{padding:18px 12px 15px}.figure-scroll img{min-width:840px}.evidence-figure figcaption{font-size:11px;line-height:1.65}.atlas-figure{margin-top:22px}}

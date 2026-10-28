@@ -37,11 +37,11 @@
     </section>
 
     <section class="section wrap" id="results" aria-labelledby="results-title">
-      <div class="section-heading"><p class="eyebrow">01 / Matched readouts</p><h2 id="results-title">One model. Different endpoints.</h2></div>
-      <div class="section-intro"><p>Full leads the longer-budget adapted-head mean; Dual leads cross-task transfer. With a fixed teacher and matched adaptation budgets, the native head and frozen probes resolve complementary effects of the same intervention.</p></div>
-      <figure class="readout-figure">
-        <img src="assets/readout-comparison.svg" width="900" height="272" alt="Bar chart showing Full has the highest native-head Macro-F1, while Dual has the highest cross-task frozen-probe mean among the displayed conditions.">
-        <figcaption>Qwen3-4B-Instruct-2507 adapted on XNLI. Staged 600 means 150+450 updates with fresh optimization at continuation. Cross-task scores average MASSIVE, AG News, and PAWS-X. Bars and whiskers show mean ± SD; both axes start at zero. <a href="assets/readout-comparison.json">Underlying values ↗</a></figcaption>
+      <div class="section-heading"><p class="eyebrow">01 / Component interactions</p><h2 id="results-title">Selection, anchoring, and reset across budgets.</h2></div>
+      <div class="section-intro"><p>Factorial contrasts separate KL and head-reset effects from their interaction. Native-head, in-task, and cross-task readouts track how each intervention changes with the adaptation budget.</p></div>
+      <figure class="evidence-figure">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Five-panel component and budget effects; scroll horizontally on small screens"><img src="assets/factorial-effects.svg" width="972" height="295" alt="Five panels show KL and reset contrasts at 150 and staged 600 updates, their interaction, budget differences, and Dual minus Confidence across prediction and probe endpoints."></div>
+        <figcaption><strong>Qwen / XNLI.</strong> (a,b) Factorial effects at 150 and staged 600; (c) KL–reset interaction; (d) 600−150 changes; (e) Dual−Confidence. Paired mean ± sample SD over three fixed-teacher student seeds; faint points show individual differences. Staged 600 is 150+450 updates with fresh continuation optimization. Cross-task probes average MASSIVE, AG News, and PAWS-X. <a href="assets/factorial-effects.svg">Full-resolution figure ↗</a></figcaption>
       </figure>
     </section>
 
@@ -49,18 +49,32 @@
       <div><p class="eyebrow">02 / Controlled interventions</p><h2 id="method-title">Select support.<br>Anchor structure.<br>Redirect updates.</h2></div>
       <div class="method-body">
         <div class="equation" aria-label="Dual ranks the minimum of confidence and semantic percentiles; Full optimizes selected cross entropy plus attention KL."><p>u<sub>i</sub> = min{F<sub>c</sub>(c<sub>i</sub>), F<sub>s</sub>(s<sub>i</sub>)}</p><p>ℒ<sub>Full</sub> = ℒ<sub>selected CE</sub> + λ ℒ<sub>attention KL</sub></p></div>
-        <p>Dual retains 60% of target inputs using confidence and frozen semantic support. Full adds teacher-to-student attention KL and one task-head reset. The teacher and gate stay fixed.</p>
+        <p>Dual retains 60% of target inputs using confidence and frozen semantic support. Full combines teacher-to-student attention KL with task-head reinitialization at adaptation onset. The teacher and gate stay fixed.</p>
         <p>A selected-gradient decomposition separates support shift from pseudo-label error. Local propositions describe attention curvature and head-mediated feature updates, connecting each intervention to a distinct mechanism.</p>
       </div>
     </div></section>
 
     <section class="section wrap" aria-labelledby="geometry-title">
-      <div class="section-heading"><p class="eyebrow">03 / Representation evidence</p><h2 id="geometry-title">Geometry makes specialization visible.</h2></div>
-      <figure class="space-figure">
-        <img src="assets/representation.svg" width="972" height="317" loading="lazy" alt="Four measured Qwen representation spaces compare Dual, Dual plus KL, Dual plus reinitialization, and Full using common PCA coordinates and camera. Insets give normalized between-to-within scatter, effective rank, and teacher-reference CKA.">
-        <figcaption>Qwen/XNLI, seed 17, staged 600: 512 matched inputs. Shared PCA explains 47.03% of pooled variance; axes and camera are fixed. Insets report normalized B/W, effective rank, and teacher-reference CKA.</figcaption>
+      <div class="section-heading"><p class="eyebrow">03 / Representation geometry</p><h2 id="geometry-title">Class organization and retained variation.</h2></div>
+      <div class="section-intro"><p>Common projections make within-experiment changes visible; full-dimensional scatter, rank, and teacher similarity quantify distinct aspects of the representation. Each atlas retains its own backbone and task scope.</p></div>
+      <figure class="evidence-figure">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Four-panel Qwen representation atlas; scroll horizontally on small screens"><img src="assets/representation.svg" width="972" height="317" loading="lazy" alt="Four measured Qwen representation spaces compare Dual, Dual plus KL, Dual plus reinitialization, and Full using common PCA coordinates and camera. Insets give normalized between-to-within scatter, effective rank, and teacher-reference CKA."></div>
+        <figcaption><strong>Qwen / XNLI, seed 17, staged 600.</strong> Four factorial variants share 512 inputs, axes, and camera. PCA pooled across eight conditions explains 47.03% of variance. Centroids and 1-SD covariance ellipsoids summarize classes; insets report normalized B/W, effective rank, and centered linear CKA to the source teacher. <a href="assets/representation.svg">Full-resolution figure ↗</a></figcaption>
       </figure>
-      <div class="closing"><p>Evaluation spans two model families, four general classification tasks, and original Korean aspect sentiment experiments. Native heads, fresh in-task probes, and other-task transfer resolve different operating regimes; geometric concentration alone does not establish transferable information.</p><a class="text-link" href="https://anonymous.4open.science/r/selective-adaptation-055E/">Explore configurations and reproduction instructions <span aria-hidden="true">↗</span></a></div>
+      <figure class="evidence-figure atlas-figure">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Eight-panel XLM-R inference and intent representation atlas; scroll horizontally on small screens"><img src="assets/xlmr-atlas.svg" width="972" height="518" loading="lazy" alt="Two rows of four 3D representation plots compare All, Confidence, Dual, and Full on XNLI and MASSIVE with raw between-to-within scatter and effective-rank annotations."></div>
+        <figcaption><strong>XLM-R / XNLI and MASSIVE, seed 17.</strong> Each task shares 512 target inputs and a pooled PCA, with axes/camera fixed within its row. Explained variance is 71.78% / 30.28%. Colors identify the eight most frequent classes; other classes are gray. Insets give raw full-dimensional B/W and effective rank. <a href="assets/xlmr-atlas.svg">Full-resolution figure ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="section wrap attention-section" aria-labelledby="attention-title">
+      <div class="section-heading"><p class="eyebrow">04 / Attention structure</p><h2 id="attention-title">Anchoring reshapes layerwise distributions.</h2></div>
+      <div class="section-intro"><p>Attention replay resolves where anchoring acts across depth. Teacher–student divergence and attention entropy distinguish reference proximity from concentration within the same matched inputs.</p></div>
+      <figure class="evidence-figure">
+        <div class="figure-scroll" tabindex="0" role="region" aria-label="Eight-panel layer-resolved attention distributions; scroll horizontally on small screens"><img src="assets/attention-distributions.svg" width="972" height="526" loading="lazy" alt="Eight 3D density plots compare Dual, Dual plus KL, Dual plus reinitialization, and Full. The top row gives teacher-student attention JS across twelve layers; the bottom row gives normalized entropy."></div>
+        <figcaption><strong>XLM-R / XNLI, seed 17.</strong> Top: teacher–student attention JS; bottom: normalized entropy. Common bins/scales cover 16 matched inputs, 12 layers, and 12 heads from GPU BF16 replay (batch 16); saved probabilities reproduce exactly. Input/head measurements describe distribution shape, not independent model replications. JS is symmetric; the training KL is directional. <a href="assets/attention-distributions.svg">Full-resolution figure ↗</a></figcaption>
+      </figure>
+      <div class="closing"><p>The manuscript connects these controlled mechanisms to four general classification tasks and original Korean aspect sentiment experiments. Prediction, transfer, geometry, and attention provide complementary evidence for selective adaptation.</p><a class="text-link" href="https://anonymous.4open.science/r/selective-adaptation-055E/">Explore configurations and reproduction instructions <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
   <footer class="wrap"><p>Selective adaptation · Noisy supervision · Representation learning</p><a href="paper.pdf">Full manuscript ↗</a></footer>
