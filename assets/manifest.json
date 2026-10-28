@@ -7,9 +7,9 @@
   },
   "representation.svg": {
     "source_figure": "figure4.svg",
-    "source_sha256": "6fdd512242667b4d9d507b74ff128d5f815773551be2137af6f22fb414bbc4db",
-    "published_sha256": "94f0a6e1c329463c8d3f69e70bb03bb7863cbaaef6b257b5f4a6ef5d67835b6d",
-    "change": "Removed export metadata and external doctype; plotted content unchanged."
+    "source_sha256": "c55dda34e0647e4677c0624d65f7e3067d0ada216fbb18669a31afd647598025",
+    "published_sha256": "7ad9c465d70f2d510ef683169dcf07d49aa2eb0bbe30d2c8f222ee7aa585313a",
+    "change": "Removed export metadata and external doctype; reviewed figure content and layout unchanged."
   },
   "factorial-effects.svg": {
     "source_figure": "figure2.svg",
@@ -25,8 +25,8 @@
   },
   "attention-distributions.svg": {
     "source_figure": "attention_distributions.svg",
-    "source_sha256": "a8f1bd3ddb894127e7d8fa5252bc357eb7ebb8008975ba41bf8e9e46c9ed29a9",
-    "published_sha256": "3a2a326c534c414793fd75fc69e2c16a14f1ff678a0589566c8b2aeacf0ad110",
-    "change": "Removed export metadata and external doctype; plotted content unchanged."
+    "source_sha256": "c5c580750ecb266c996b82a64f0696f0d91bb31b6f0cc41176cb7eff8f5f57d7",
+    "published_sha256": "7c46a5e7adf738311c19103f6236e8b539bf78ac056234dd21a54c44ee9f8455",
+    "change": "Removed export metadata and external doctype; reviewed figure content and layout unchanged."
   }
 }
