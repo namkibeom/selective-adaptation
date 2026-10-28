@@ -7,8 +7,8 @@
   },
   "representation.svg": {
     "source_figure": "figure4.svg",
-    "source_sha256": "11304b95217318e34ee2545d58f40e217c9bcf3767d7a59618851f7acef1a04b",
-    "published_sha256": "edc68e26df20f9f6e703b2fc0a020f5562b332d06d697e0ea277376739745e07",
+    "source_sha256": "d153f52e3ec3afb87d8c805a4bc0b4e96703f724204e490ad1e66d1874430ed0",
+    "published_sha256": "51131c8410a24d20af3d3fcdd804767f45f790506a6214349971689b5e18b2bc",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "factorial-effects.svg": {
@@ -19,8 +19,8 @@
   },
   "xlmr-atlas.svg": {
     "source_figure": "atlas_part1.svg",
-    "source_sha256": "a3917e3ce91c04ecb7f66dccb028a48e7ee25e142fd4e8d5a11f7e4ff530f456",
-    "published_sha256": "18412f88c84931b1a20e1e6b6b70e766a7aa17f9bc4f09ebb58250d2b8c68223",
+    "source_sha256": "a7808afe687f447ea959fe185f2b3c8b5f5b69fbdd5bdc42197bb7e801845066",
+    "published_sha256": "e3a6211fa644cfc7d9c1bb007eb84fa437e80656b4aef5556941afc84383dbda",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "attention-distributions.svg": {
