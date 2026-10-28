@@ -1,0 +1,48 @@
+{
+  "source": "Paper Table 1, staged 600 columns",
+  "model": "Qwen3-4B-Instruct-2507",
+  "adaptation_task": "XNLI",
+  "student_seeds": [
+    17,
+    23,
+    42
+  ],
+  "teacher_seed": 17,
+  "schedule": "150 + 450 updates, fresh optimizer and scheduler at continuation",
+  "metric": "Macro-F1 (%)",
+  "cross_task_mean": [
+    "MASSIVE",
+    "AG News",
+    "PAWS-X"
+  ],
+  "values": [
+    {
+      "condition": "All",
+      "native_head_mean": 60.58,
+      "native_head_sd": 1.87,
+      "cross_task_mean": 77.99,
+      "cross_task_sd": 0.19
+    },
+    {
+      "condition": "Confidence",
+      "native_head_mean": 59.2,
+      "native_head_sd": 1.95,
+      "cross_task_mean": 78.58,
+      "cross_task_sd": 0.21
+    },
+    {
+      "condition": "Dual",
+      "native_head_mean": 62.17,
+      "native_head_sd": 1.25,
+      "cross_task_mean": 79.04,
+      "cross_task_sd": 0.28
+    },
+    {
+      "condition": "Full",
+      "native_head_mean": 66.19,
+      "native_head_sd": 4.12,
+      "cross_task_mean": 77.59,
+      "cross_task_sd": 0.13
+    }
+  ]
+}

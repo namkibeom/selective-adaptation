@@ -1,0 +1,14 @@
+{
+  "concept.svg": {
+    "source_figure": "figure1.svg",
+    "source_sha256": "8e498bbaf31b3b720dddb2ce10acb4fd93295cce10223a0f209209887c08c68d",
+    "published_sha256": "64f302ba4b021388c9b812654dda9b6cec396f8db9e5b6cbb178e2c8c59de03e",
+    "change": "Removed export metadata and external doctype; plotted content unchanged."
+  },
+  "representation.svg": {
+    "source_figure": "figure4.svg",
+    "source_sha256": "06550feaecc80b94810ea6b66f6a1200bbb86ca111db361de6b97c4aaba5e909",
+    "published_sha256": "16c088545be4aebb5d52b63fc94bce5ef88940a84175f5a6c7696a87e1de3e5d",
+    "change": "Removed export metadata and external doctype; plotted content unchanged."
+  }
+}

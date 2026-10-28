@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selective adaptation under noisy supervision: a study of task specialization, transferable representations, and their distinct evaluation endpoints.">
+  <meta name="color-scheme" content="light">
+  <title>Selective Adaptation under Noisy Supervision</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead wrap">
+    <a class="wordmark" href="#main"><span class="mark" aria-hidden="true"></span> Representation Atlas</a>
+    <nav aria-label="Project navigation"><a href="#results">Results</a><a href="#method">Method</a><a href="paper.pdf">Paper ↗</a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow">Research project · working manuscript</p>
+        <h1 id="title">Selective Adaptation under Noisy Supervision:<span>Separating Task Specialization from Representation Transfer</span></h1>
+        <p class="authors">Jason K. Nam <span aria-hidden="true">·</span> <span class="affiliation">DatAI</span></p>
+        <p class="lead">Better target predictions need not imply more transferable representations. We study where selection, attention anchoring, and head reinitialization direct adaptation.</p>
+        <div class="actions"><a class="button primary" href="paper.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="button" href="https://anonymous.4open.science/r/selective-adaptation-055E/">Anonymous code <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <figure class="hero-figure">
+        <img src="assets/concept.svg" width="468" height="382" alt="Conceptual Dual and Full representation spaces: Full separates target classes while compressing variation in an independent transfer factor.">
+        <figcaption><span class="figure-label">01 / Concept</span> Schematic geometry; points are illustrative. Footer contrasts are measured Full−Dual Macro-F1 differences on Qwen/XNLI at staged 600, paired mean ± SD across three student seeds.</figcaption>
+      </figure>
+    </section>
+
+    <section class="metrics wrap" aria-label="Selected findings">
+      <div><p class="metric-value">+5.60<span>± 4.91</span></p><p>Full vs All · XNLI native head</p><small>Qwen, staged 600 · paired Macro-F1 points (n=3)</small></div>
+      <div><p class="metric-value">+0.46<span>± 0.16</span></p><p>Dual vs Confidence · cross-task probes</p><small>Qwen, staged 600 · paired Macro-F1 points (n=3)</small></div>
+      <div><p class="metric-value">78<span>% lower</span></p><p>Dual+KL vs Dual · final-layer attention JS</p><small>XLM-R/XNLI, seed 17, 16 matched inputs</small></div>
+    </section>
+
+    <section class="section wrap" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><p class="eyebrow">01 / Matched readouts</p><h2 id="results-title">One model. Different endpoints.</h2></div>
+      <div class="section-intro"><p>Full leads the longer-budget adapted-head mean; Dual leads cross-task transfer. Full’s gain over All is positive in two of three seeds. Dual’s transfer gain over Confidence is positive in all three.</p></div>
+      <figure class="readout-figure">
+        <img src="assets/readout-comparison.svg" width="900" height="272" alt="Bar chart showing Full has the highest native-head Macro-F1, while Dual has the highest cross-task frozen-probe mean among the displayed conditions.">
+        <figcaption>Qwen3-4B-Instruct-2507 adapted on XNLI. Staged 600 means 150+450 updates with fresh optimization at continuation. Cross-task scores average MASSIVE, AG News, and PAWS-X. Bars and whiskers show mean ± SD; both axes start at zero. <a href="assets/readout-comparison.json">Underlying values ↗</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="method-band" id="method" aria-labelledby="method-title"><div class="wrap method-layout">
+      <div><p class="eyebrow">02 / Controlled interventions</p><h2 id="method-title">Select support.<br>Anchor structure.<br>Redirect updates.</h2></div>
+      <div class="method-body">
+        <div class="equation" aria-label="Dual ranks the minimum of confidence and semantic percentiles; Full optimizes selected cross entropy plus attention KL."><p>u<sub>i</sub> = min{F<sub>c</sub>(c<sub>i</sub>), F<sub>s</sub>(s<sub>i</sub>)}</p><p>ℒ<sub>Full</sub> = ℒ<sub>selected CE</sub> + λ ℒ<sub>attention KL</sub></p></div>
+        <p>Dual retains 60% of target inputs using confidence and frozen semantic support. Full adds teacher-to-student attention KL and one task-head reset. The teacher and gate stay fixed.</p>
+        <p>A selected-gradient decomposition separates support shift from pseudo-label error. Local propositions describe attention curvature and head-mediated feature updates, connecting each intervention to a distinct mechanism.</p>
+      </div>
+    </div></section>
+
+    <section class="section wrap" aria-labelledby="geometry-title">
+      <div class="section-heading"><p class="eyebrow">03 / Representation evidence</p><h2 id="geometry-title">Geometry makes specialization visible.</h2></div>
+      <figure class="space-figure">
+        <img src="assets/representation.svg" width="972" height="317" loading="lazy" alt="Four measured Qwen representation spaces compare Dual, Dual plus KL, Dual plus reinitialization, and Full using common PCA coordinates and camera. Insets give normalized between-to-within scatter, effective rank, and teacher-reference CKA.">
+        <figcaption>Qwen/XNLI, seed 17, staged 600: 512 matched inputs. Shared PCA explains 47.03% of pooled variance; axes and camera are fixed. Insets report normalized B/W, effective rank, and teacher-reference CKA.</figcaption>
+      </figure>
+      <div class="closing"><p>Evaluation spans two model families, four general classification tasks, and original Korean aspect sentiment experiments. Native heads, fresh in-task probes, and other-task transfer resolve different operating regimes; geometric concentration alone does not establish transferable information.</p><a class="text-link" href="https://anonymous.4open.science/r/selective-adaptation-055E/">Explore configurations and reproduction instructions <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+  <footer class="wrap"><p>Selective adaptation · Noisy supervision · Representation learning</p><a href="paper.pdf">Full manuscript ↗</a></footer>
+</body>
+</html>
