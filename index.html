@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Selective adaptation under noisy supervision: a study of task specialization, transferable representations, and their distinct evaluation endpoints.">
   <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Selective Adaptation under Noisy Supervision</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -37,7 +38,7 @@
 
     <section class="section wrap" id="results" aria-labelledby="results-title">
       <div class="section-heading"><p class="eyebrow">01 / Matched readouts</p><h2 id="results-title">One model. Different endpoints.</h2></div>
-      <div class="section-intro"><p>Full leads the longer-budget adapted-head mean; Dual leads cross-task transfer. Full’s gain over All is positive in two of three seeds. Dual’s transfer gain over Confidence is positive in all three.</p></div>
+      <div class="section-intro"><p>Full leads the longer-budget adapted-head mean; Dual leads cross-task transfer. With a fixed teacher and matched adaptation budgets, the native head and frozen probes resolve complementary effects of the same intervention.</p></div>
       <figure class="readout-figure">
         <img src="assets/readout-comparison.svg" width="900" height="272" alt="Bar chart showing Full has the highest native-head Macro-F1, while Dual has the highest cross-task frozen-probe mean among the displayed conditions.">
         <figcaption>Qwen3-4B-Instruct-2507 adapted on XNLI. Staged 600 means 150+450 updates with fresh optimization at continuation. Cross-task scores average MASSIVE, AG News, and PAWS-X. Bars and whiskers show mean ± SD; both axes start at zero. <a href="assets/readout-comparison.json">Underlying values ↗</a></figcaption>
