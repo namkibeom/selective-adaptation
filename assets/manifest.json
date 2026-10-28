@@ -1,14 +1,14 @@
 {
   "concept.svg": {
     "source_figure": "figure1.svg",
-    "source_sha256": "c006a16f2c01a2c9205265c23d7755f34a144ab92d74847f93c3fe56103d4e6b",
-    "published_sha256": "adfa9ae925e8b79d5cde1bcf69667062018eb901fc1d474d81b84841ddef7bab",
+    "source_sha256": "f50f7c0b381fb2516a4214b559006f9530e439ea0279e7d5d849611db7346240",
+    "published_sha256": "5e54ea990906ff15f4c604ab5bddd519daf126b7b6931a56dad60c81b93bcc6c",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "representation.svg": {
     "source_figure": "figure4.svg",
-    "source_sha256": "06550feaecc80b94810ea6b66f6a1200bbb86ca111db361de6b97c4aaba5e909",
-    "published_sha256": "16c088545be4aebb5d52b63fc94bce5ef88940a84175f5a6c7696a87e1de3e5d",
+    "source_sha256": "11304b95217318e34ee2545d58f40e217c9bcf3767d7a59618851f7acef1a04b",
+    "published_sha256": "edc68e26df20f9f6e703b2fc0a020f5562b332d06d697e0ea277376739745e07",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "factorial-effects.svg": {
@@ -19,14 +19,14 @@
   },
   "xlmr-atlas.svg": {
     "source_figure": "atlas_part1.svg",
-    "source_sha256": "561653e8bfc38a0f7c1408512c2713d6d9dd99b4d5e988f63c2b5f280cc41a31",
-    "published_sha256": "be960bc42cb6ff773b77c8b918f68bd9294c89deb572884b578d201b56f1486a",
+    "source_sha256": "a3917e3ce91c04ecb7f66dccb028a48e7ee25e142fd4e8d5a11f7e4ff530f456",
+    "published_sha256": "18412f88c84931b1a20e1e6b6b70e766a7aa17f9bc4f09ebb58250d2b8c68223",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "attention-distributions.svg": {
     "source_figure": "attention_distributions.svg",
-    "source_sha256": "ecfebcb6478d5ca54f5f0ed5e27b13414733bf89fa1a61271af469b3641012ea",
-    "published_sha256": "6993bf90c36f9625a618342a0305d6033aed3e75853e69a5815e7831fd6a437e",
+    "source_sha256": "a8f1bd3ddb894127e7d8fa5252bc357eb7ebb8008975ba41bf8e9e46c9ed29a9",
+    "published_sha256": "3a2a326c534c414793fd75fc69e2c16a14f1ff678a0589566c8b2aeacf0ad110",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   }
 }
