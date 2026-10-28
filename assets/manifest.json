@@ -7,8 +7,8 @@
   },
   "representation.svg": {
     "source_figure": "figure4.svg",
-    "source_sha256": "d153f52e3ec3afb87d8c805a4bc0b4e96703f724204e490ad1e66d1874430ed0",
-    "published_sha256": "51131c8410a24d20af3d3fcdd804767f45f790506a6214349971689b5e18b2bc",
+    "source_sha256": "0f98f1d98e5d53e8cee9b562a3d6cf484d68c73948dc542985cc8a40e8f6da45",
+    "published_sha256": "8c89719964812352300e30d2f70ed578a0a31d1908ebcce6dada42335618f4df",
     "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "factorial-effects.svg": {
