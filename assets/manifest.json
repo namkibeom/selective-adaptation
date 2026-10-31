@@ -25,8 +25,8 @@
   },
   "attention-distributions.svg": {
     "source_figure": "attention_distributions.svg",
-    "source_sha256": "837fb065d96a7a758efd824fd161261de48d621334d9d4e30f5a116ba1d350f6",
-    "published_sha256": "837fb065d96a7a758efd824fd161261de48d621334d9d4e30f5a116ba1d350f6",
-    "change": "Exact copy of the current manuscript figure. The reading key describes matched input-head pairs and layerwise distributions; plotted numerical values, bins, scales, and condition order are unchanged."
+    "source_sha256": "4f4ddf0054b7c4110405b44017e5a5b9b1a8ac528d5da06f77ea42ef354294e5",
+    "published_sha256": "4f4ddf0054b7c4110405b44017e5a5b9b1a8ac528d5da06f77ea42ef354294e5",
+    "change": "Exact copy of the current manuscript figure. Reading key describes layerwise distributions, shared metric-wise bins, and unit-area normalization. Numerical values, bin edges, scales, and condition order are unchanged."
   }
 }
