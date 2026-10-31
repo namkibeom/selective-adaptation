@@ -33,7 +33,7 @@
     <section class="metrics wrap" aria-label="Selected findings">
       <div><p class="metric-value">+5.60<span>± 4.91</span></p><p>Full vs All · XNLI native head</p><small>Qwen, staged 600 · paired Macro-F1 points (n=3)</small></div>
       <div><p class="metric-value">+0.46<span>± 0.16</span></p><p>Dual vs Confidence · cross-task probes</p><small>Qwen, staged 600 · paired Macro-F1 points (n=3)</small></div>
-      <div><p class="metric-value">78<span>% lower</span></p><p>Dual+KL vs Dual · final-layer attention JS</p><small>XLM-R/XNLI, seed 17, 16 matched inputs</small></div>
+      <div><p class="metric-value">78<span>% lower</span></p><p>Dual+KL vs Dual · final-layer attention JS</p><small>XLM-R/XNLI · matched attention replay</small></div>
     </section>
 
     <section class="section wrap" id="results" aria-labelledby="results-title">
@@ -59,11 +59,11 @@
       <div class="section-intro"><p>Common projections make within-experiment changes visible; full-dimensional scatter, rank, and teacher similarity quantify distinct aspects of the representation. Each atlas retains its own backbone and task scope.</p></div>
       <figure class="evidence-figure">
         <div class="figure-scroll" tabindex="0" role="region" aria-label="Seven-condition Qwen representation atlas; scroll horizontally on small screens"><img src="assets/representation.svg" width="972" height="461" loading="lazy" alt="Seven measured Qwen representation spaces compare All, Confidence, Semantic, Dual, Dual plus KL, Dual plus reinitialization, and Full using common PCA coordinates and camera. Insets give normalized between-to-within scatter, effective rank, and teacher-reference CKA."></div>
-        <figcaption><strong>Qwen / XNLI, seed 17, staged 600.</strong> All seven selection and component variants share 512 inputs, axes, and camera. PCA pooled across eight conditions explains 47.03% of variance. Centroids and 1-SD covariance ellipsoids summarize classes; insets report normalized B/W, effective rank, and centered linear CKA to the source teacher. <a href="assets/representation.svg">Full-resolution figure ↗</a></figcaption>
+        <figcaption><strong>Qwen / XNLI, staged 600.</strong> All seven selection and component variants share 512 inputs, axes, and camera. PCA pooled across eight conditions explains 47.03% of variance. Centroids and 1-SD covariance ellipsoids summarize classes; insets report normalized B/W, effective rank, and centered linear CKA to the source teacher. <a href="assets/representation.svg">Full-resolution figure ↗</a></figcaption>
       </figure>
       <figure class="evidence-figure atlas-figure">
         <div class="figure-scroll" tabindex="0" role="region" aria-label="Eight-panel matched XLM-R inference and intent representation atlas; scroll horizontally on small screens"><img src="assets/xlmr-atlas.svg" width="972" height="468" loading="lazy" alt="Two aligned rows compare All, Confidence, Dual, and Full on XNLI and MASSIVE, with raw between-to-within scatter and effective-rank annotations."></div>
-        <figcaption><strong>XLM-R / XNLI and MASSIVE, seed 17.</strong> Both task rows compare All, Confidence, Dual, and Full in aligned columns. Each task shares 512 target inputs and a pooled PCA, with axes/camera fixed within its row. Explained variance is 71.78% / 30.28%. Colors identify the eight most frequent classes; other classes are gray. Insets give raw full-dimensional B/W and effective rank. <a href="assets/xlmr-atlas.svg">Full-resolution figure ↗</a></figcaption>
+        <figcaption><strong>XLM-R / XNLI and MASSIVE.</strong> Both task rows compare All, Confidence, Dual, and Full in aligned columns. Each task shares 512 target inputs and a pooled PCA, with axes/camera fixed within its row. Explained variance is 71.78% / 30.28%. Colors identify the eight most frequent classes; other classes are gray. Insets give raw full-dimensional B/W and effective rank. <a href="assets/xlmr-atlas.svg">Full-resolution figure ↗</a></figcaption>
       </figure>
     </section>
 
@@ -72,7 +72,7 @@
       <div class="section-intro"><p>Attention replay resolves where anchoring acts across depth. Teacher–student divergence and attention entropy distinguish reference proximity from concentration within the same matched inputs.</p></div>
       <figure class="evidence-figure">
         <div class="figure-scroll" tabindex="0" role="region" aria-label="Seven-condition layer-resolved attention distributions; scroll horizontally on small screens"><img src="assets/attention-distributions.svg" width="972" height="720" loading="lazy" alt="Fourteen 3D density plots compare all seven adaptation variants in two groups. Each pair shows teacher-student attention JS across twelve layers above normalized entropy."></div>
-        <figcaption><strong>XLM-R / XNLI, seed 17.</strong> The two groups show all seven variants. Within each condition pair: teacher–student attention JS above normalized entropy. Common bins/scales cover 16 matched inputs, 12 layers, and 12 heads from GPU BF16 replay (batch 16); saved probabilities reproduce exactly. Input/head measurements describe distribution shape, not independent model replications. JS is symmetric; the training KL is directional. <a href="assets/attention-distributions.svg">Full-resolution figure ↗</a></figcaption>
+        <figcaption><strong>XLM-R / XNLI.</strong> The two groups show all seven variants. Within each condition pair: teacher–student attention JS above normalized entropy. Common bins/scales compare matched inputs across 12 layers and 12 heads from GPU BF16 replay; saved probabilities reproduce exactly. Input/head measurements describe distribution shape, not independent model replications. JS is symmetric; the training KL is directional. <a href="assets/attention-distributions.svg">Full-resolution figure ↗</a></figcaption>
       </figure>
       <div class="closing"><p>The manuscript connects these controlled mechanisms to four general classification tasks and original Korean aspect sentiment experiments. Prediction, transfer, geometry, and attention provide complementary evidence for selective adaptation.</p><a class="text-link" href="https://anonymous.4open.science/r/selective-adaptation-055E/">Explore configurations and reproduction instructions <span aria-hidden="true">↗</span></a></div>
     </section>
