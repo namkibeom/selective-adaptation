@@ -1,9 +1,9 @@
 {
   "concept.svg": {
     "source_figure": "figure1.svg",
-    "source_sha256": "077d42c0335083839660aa5b86536a313561feb5a28ecc89d67bf855e0ce7584",
-    "published_sha256": "5faef557673b3787bb2700b8a64dc242b6595b3ee9b409bdd4c05748b9e067b8",
-    "change": "Preserved twin 3D concept; retained independent-factor variation in Full. All fourteen measured footer values unchanged. Export metadata and external doctype removed."
+    "source_sha256": "f50f7c0b381fb2516a4214b559006f9530e439ea0279e7d5d849611db7346240",
+    "published_sha256": "5e54ea990906ff15f4c604ab5bddd519daf126b7b6931a56dad60c81b93bcc6c",
+    "change": "Removed export metadata and external doctype; plotted content unchanged."
   },
   "representation.svg": {
     "source_figure": "figure4.svg",
